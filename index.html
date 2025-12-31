@@ -323,8 +323,71 @@
             text-align: center;
             color: #00b4d8;
             font-size: 2.2rem;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
             text-shadow: 0 0 10px rgba(0, 180, 216, 0.5);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #90e0ef;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        /* Pinned Wishes Section */
+        .pinned-wishes-section {
+            margin-bottom: 40px;
+        }
+
+        .pinned-wishes-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: rgba(255, 215, 0, 0.15);
+            border-radius: 10px;
+            border: 2px solid #ffd700;
+        }
+
+        .pinned-wishes-header i {
+            color: #ffd700;
+            font-size: 1.5rem;
+        }
+
+        .pinned-wishes-header h3 {
+            color: #ffd700;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        /* All Wishes Section */
+        .all-wishes-section {
+            margin-top: 40px;
+        }
+
+        .all-wishes-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: rgba(0, 180, 216, 0.15);
+            border-radius: 10px;
+            border: 2px solid #00b4d8;
+        }
+
+        .all-wishes-header i {
+            color: #00b4d8;
+            font-size: 1.5rem;
+        }
+
+        .all-wishes-header h3 {
+            color: #00b4d8;
+            font-size: 1.5rem;
+            margin: 0;
         }
 
         .wishes-grid {
@@ -348,6 +411,18 @@
             background: rgba(32, 58, 67, 1);
         }
 
+        /* Pinned Wish Card Style */
+        .wish-card.pinned {
+            background: rgba(255, 215, 0, 0.12);
+            border: 2px solid #ffd700;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
+        }
+
+        .wish-card.pinned:hover {
+            background: rgba(255, 215, 0, 0.18);
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.3);
+        }
+
         .wish-header {
             display: flex;
             justify-content: space-between;
@@ -357,29 +432,35 @@
             border-bottom: 1px solid #00b4d8;
         }
 
+        .wish-card.pinned .wish-header {
+            border-bottom-color: #ffd700;
+        }
+
         .wish-name {
             font-weight: bold;
             color: #00b4d8;
             font-size: 1.2rem;
         }
 
-        .wish-phone-btn {
-            background: #25D366;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.3s ease;
+        .wish-card.pinned .wish-name {
+            color: #ffd700;
         }
 
-        .wish-phone-btn:hover {
-            background: #128C7E;
-            transform: translateY(-2px);
+        .pin-badge {
+            background: #ffd700;
+            color: #1a1a2e;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 3px 10px rgba(255, 215, 0, 0.4);
+        }
+
+        .pin-badge i {
+            font-size: 0.9rem;
         }
 
         .wish-date {
@@ -391,76 +472,6 @@
         .wish-message {
             color: #e0f7fa;
             line-height: 1.8;
-        }
-
-        /* Phone Modal */
-        .phone-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 1001;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .phone-modal-content {
-            background: rgba(15, 32, 39, 0.95);
-            padding: 30px;
-            border-radius: 15px;
-            border: 2px solid #25D366;
-            max-width: 500px;
-            width: 90%;
-            text-align: center;
-        }
-
-        .phone-modal-content h3 {
-            color: #25D366;
-            margin-bottom: 20px;
-        }
-
-        .phone-number {
-            font-size: 1.5rem;
-            color: #fff;
-            background: rgba(32, 58, 67, 0.8);
-            padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border: 2px solid #00b4d8;
-        }
-
-        .modal-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 25px;
-        }
-
-        .modal-btn {
-            padding: 12px 25px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .whatsapp-modal-btn {
-            background: #25D366;
-            color: white;
-        }
-
-        .close-modal-btn {
-            background: #ff4757;
-            color: white;
-        }
-
-        .modal-btn:hover {
-            transform: translateY(-3px);
         }
 
         /* Loading Spinner */
@@ -478,6 +489,20 @@
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
+        }
+
+        .empty-wishes {
+            text-align: center;
+            padding: 40px;
+            color: #90e0ef;
+            font-size: 1.1rem;
+        }
+
+        .empty-wishes i {
+            font-size: 3rem;
+            color: #00b4d8;
+            margin-bottom: 15px;
+            display: block;
         }
 
         /* Footer */
@@ -532,10 +557,6 @@
             .whatsapp-input .country-code {
                 padding: 12px;
                 font-size: 0.9rem;
-            }
-
-            .modal-buttons {
-                flex-direction: column;
             }
         }
 
@@ -660,31 +681,30 @@
     <section id="wishes">
         <div class="container">
             <div class="wishes-section">
-                <h2>Recent Wishes</h2>
-                <div class="wishes-grid" id="wishesContainer">
-                    <!-- Wishes will load here -->
+                <h2>Wishes from Our Community</h2>
+                <p class="section-subtitle">See what others are wishing for this new year</p>
+                
+                <!-- Pinned Wishes -->
+                <div id="pinnedWishesSection" class="pinned-wishes-section" style="display: none;">
+                    <div class="pinned-wishes-header">
+                        <i class="fas fa-star"></i>
+                        <h3>Featured Wishes</h3>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="wishes-grid" id="pinnedWishesContainer"></div>
+                </div>
+
+                <!-- All Wishes -->
+                <div class="all-wishes-section">
+                    <div class="all-wishes-header">
+                        <i class="fas fa-comments"></i>
+                        <h3>Recent Wishes</h3>
+                    </div>
+                    <div class="wishes-grid" id="wishesContainer"></div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Phone Modal -->
-    <div id="phoneModal" class="phone-modal">
-        <div class="phone-modal-content">
-            <h3>Contact This Person</h3>
-            <p>The following WhatsApp number is available for contact:</p>
-            <div class="phone-number" id="modalPhoneNumber"></div>
-            <p>Click the button below to open WhatsApp and send a message:</p>
-            <div class="modal-buttons">
-                <a id="whatsappLink" target="_blank" class="modal-btn whatsapp-modal-btn">
-                    <i class="fab fa-whatsapp"></i> Open WhatsApp
-                </a>
-                <button onclick="closePhoneModal()" class="modal-btn close-modal-btn">
-                    <i class="fas fa-times"></i> Close
-                </button>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer>
@@ -715,29 +735,10 @@
         // DOM Elements
         const wishForm = document.getElementById('wishForm');
         const wishesContainer = document.getElementById('wishesContainer');
+        const pinnedWishesContainer = document.getElementById('pinnedWishesContainer');
+        const pinnedWishesSection = document.getElementById('pinnedWishesSection');
         const successMessage = document.getElementById('successMessage');
         const loadingSpinner = document.getElementById('loadingSpinner');
-        const phoneModal = document.getElementById('phoneModal');
-        const modalPhoneNumber = document.getElementById('modalPhoneNumber');
-        const whatsappLink = document.getElementById('whatsappLink');
-
-        // Modal Functions
-        function showPhoneModal(phoneNumber) {
-            modalPhoneNumber.textContent = phoneNumber;
-            whatsappLink.href = `https://wa.me/${phoneNumber.replace('+', '')}`;
-            phoneModal.style.display = 'flex';
-        }
-
-        function closePhoneModal() {
-            phoneModal.style.display = 'none';
-        }
-
-        // Close modal when clicking outside
-        phoneModal.addEventListener('click', function(e) {
-            if (e.target === phoneModal) {
-                closePhoneModal();
-            }
-        });
 
         // Submit Form
         wishForm.addEventListener('submit', function(e) {
@@ -769,7 +770,8 @@
                     year: 'numeric',
                     month: 'short',
                     day: 'numeric'
-                })
+                }),
+                pinned: false
             };
             
             loadingSpinner.style.display = 'block';
@@ -790,41 +792,67 @@
                 });
         });
 
-// Load Wishes
-function loadWishes() {
-    database.ref('wishes').orderByChild('timestamp').limitToLast(15).on('value', (snapshot) => {
-        wishesContainer.innerHTML = '';
-        
-        const wishes = [];
-        snapshot.forEach((childSnapshot) => {
-            const wishData = childSnapshot.val();
-            wishData.id = childSnapshot.key;
-            wishes.push(wishData);
-        });
-        
-        wishes.reverse();
-        
-        if (wishes.length === 0) {
-            wishesContainer.innerHTML = '<p style="text-align: center; color: #90e0ef; grid-column: 1 / -1; padding: 40px; font-size: 1.2rem;">No wishes yet. Be the first to send a wish!</p>';
-        } else {
-            wishes.forEach(wish => {
-                const card = document.createElement('div');
-                card.className = 'wish-card';
-                // මෙතැනින් Contact බොත්තම ඉවත් කර ඇත
-                card.innerHTML = `
-                    <div class="wish-header">
-                        <div>
-                            <div class="wish-name">${wish.name}</div>
-                            <div class="wish-date">${wish.date}</div>
-                        </div>
+        // Create wish card
+        function createWishCard(wish, isPinnedSection = false) {
+            const card = document.createElement('div');
+            card.className = wish.pinned ? 'wish-card pinned' : 'wish-card';
+            
+            card.innerHTML = `
+                <div class="wish-header">
+                    <div>
+                        <div class="wish-name">${wish.name}</div>
+                        <div class="wish-date">${wish.date}</div>
                     </div>
-                    <div class="wish-message">${wish.wish}</div>
-                `;
-                wishesContainer.appendChild(card);
+                    ${wish.pinned ? '<div class="pin-badge"><i class="fas fa-thumbtack"></i> Featured</div>' : ''}
+                </div>
+                <div class="wish-message">${wish.wish}</div>
+            `;
+            
+            return card;
+        }
+
+        // Load Wishes
+        function loadWishes() {
+            database.ref('wishes').orderByChild('timestamp').limitToLast(50).on('value', (snapshot) => {
+                wishesContainer.innerHTML = '';
+                pinnedWishesContainer.innerHTML = '';
+                
+                const wishes = [];
+                snapshot.forEach((childSnapshot) => {
+                    const wishData = childSnapshot.val();
+                    wishData.id = childSnapshot.key;
+                    wishes.push(wishData);
+                });
+                
+                // Sort wishes
+                wishes.reverse();
+                
+                // Separate pinned and regular wishes
+                const pinnedWishes = wishes.filter(w => w.pinned);
+                const regularWishes = wishes.filter(w => !w.pinned);
+                
+                // Display pinned wishes
+                if (pinnedWishes.length > 0) {
+                    pinnedWishesSection.style.display = 'block';
+                    pinnedWishes.forEach(wish => {
+                        pinnedWishesContainer.appendChild(createWishCard(wish, true));
+                    });
+                } else {
+                    pinnedWishesSection.style.display = 'none';
+                }
+                
+                // Display regular wishes (limit to 15)
+                if (regularWishes.length === 0 && pinnedWishes.length === 0) {
+                    wishesContainer.innerHTML = '<div class="empty-wishes"><i class="fas fa-heart"></i><p>No wishes yet. Be the first to send a wish!</p></div>';
+                } else if (regularWishes.length === 0) {
+                    wishesContainer.innerHTML = '<div class="empty-wishes"><i class="fas fa-star"></i><p>Check out our featured wishes above!</p></div>';
+                } else {
+                    regularWishes.slice(0, 15).forEach(wish => {
+                        wishesContainer.appendChild(createWishCard(wish, false));
+                    });
+                }
             });
         }
-    });
-}
 
         // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
